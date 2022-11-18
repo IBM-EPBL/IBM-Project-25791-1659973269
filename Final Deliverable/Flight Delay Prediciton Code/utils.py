@@ -12,7 +12,7 @@ def convertDateToFormat(date):
 
 
 def getFlightNumbers():
-    df = pd.read_csv("flightData.csv")
+    df = pd.read_csv("flightdata.csv")
     flightNumbers = df['FL_NUM'].unique()
     return flightNumbers
     
