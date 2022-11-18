@@ -2,7 +2,7 @@ from flask import Flask , request , render_template , flash
 import numpy as np
 import os
 import pandas as pd
-
+from gevent.pywsgi  import WSGIServer
 import utils
 
 app= Flask(__name__, template_folder='templates', static_folder='static/css')
@@ -86,9 +86,11 @@ def predict():
 def home():
     return render_template('home.html')
 
+
 # predict()
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    
+    app.run( debug = True , port = 5000)
 
 
 
